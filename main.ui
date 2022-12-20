@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>692</width>
+    <height>737</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>DUBAI Bins counting</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>Assets/icon.ico</normaloff>Assets/icon.ico</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>140</y>
+      <width>701</width>
+      <height>531</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>ArrowCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 16pt &quot;MS Shell Dlg 2&quot;;
+border-radius:10px;</string>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>Bin's overview</string>
+     </attribute>
+     <widget class="QTableWidget" name="table">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>220</y>
+        <width>461</width>
+        <height>271</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>MS Shell Dlg 2</family>
+        <pointsize>16</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 16pt &quot;MS Shell Dlg 2&quot;;
+/*table-&gt;verticalHeader()-&gt;setDefaultSectionSize(50);
+table-&gt;horizontalHeader()-&gt;setDefaultSectionSize(500);*/</string>
+      </property>
+      <attribute name="horizontalHeaderCascadingSectionResizes">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>180</number>
+      </attribute>
+      <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="horizontalHeaderStretchLastSection">
+       <bool>true</bool>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>Bin</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Counted</string>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </column>
+     </widget>
+     <widget class="QPushButton" name="search_btn">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>160</y>
+        <width>161</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">alternate-background-color: rgb(170, 85, 255);
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(255, 255, 255);
+background-color: rgb(152, 20, 124);</string>
+      </property>
+      <property name="text">
+       <string>Search</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>Assets/search.png</normaloff>Assets/search.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>46</width>
+        <height>46</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="search_box">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>160</y>
+        <width>461</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(225, 225, 225)</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+      <property name="placeholderText">
+       <string/>
+      </property>
+      <property name="cursorMoveStyle">
+       <enum>Qt::VisualMoveStyle</enum>
+      </property>
+      <property name="clearButtonEnabled">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbl_total_bins">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>300</y>
+        <width>71</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 18pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbl_daily">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>440</y>
+        <width>71</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 18pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbl_scanned">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>370</y>
+        <width>71</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 18pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="refresh_btn">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>220</y>
+        <width>161</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(152, 20, 124);
+border-radius:10px;</string>
+      </property>
+      <property name="text">
+       <string>Show all</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>Assets/showall.png</normaloff>Assets/showall.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>38</width>
+        <height>38</height>
+       </size>
+      </property>
+      <property name="default">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>290</y>
+        <width>55</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>Assets/whicon.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>360</y>
+        <width>71</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>Assets/bcicon.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>440</y>
+        <width>55</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>Assets/timeicon.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>20</y>
+        <width>221</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 20pt &quot;MS Shell Dlg 2&quot;;
+</string>
+      </property>
+      <property name="text">
+       <string>Enter Bin quantity</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_generate_2">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>20</y>
+        <width>201</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(152, 20, 124);
+border-radius:10px;</string>
+      </property>
+      <property name="text">
+       <string>Generate Excel file</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>Assets/shtyle_sheet.png</normaloff>Assets/shtyle_sheet.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>38</width>
+        <height>38</height>
+       </size>
+      </property>
+      <property name="default">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="bin_qty_2">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>20</y>
+        <width>113</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(225, 225, 225)</string>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_update">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>90</y>
+        <width>201</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(152, 20, 124);
+border-radius:10px;</string>
+      </property>
+      <property name="text">
+       <string>UPDATE</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>Assets/upload.png</normaloff>Assets/upload.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>38</width>
+        <height>38</height>
+       </size>
+      </property>
+      <property name="default">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>680</y>
+      <width>201</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(152, 20, 124);
+font: 10pt &quot;MS UI Gothic&quot;;</string>
+    </property>
+    <property name="text">
+     <string>@ 2022 VidaXL. All rights reserved.</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>20</y>
+      <width>651</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(152, 20, 124);
+background-color: rgb(255, 255, 255);
+font: 45pt &quot;MS UI Gothic&quot;;
+border-radius:10px;
+border:none;
+</string>
+    </property>
+    <property name="text">
+     <string>DUBAI Cycle Count</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>Assets/dubai.png</normaloff>Assets/dubai.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>692</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
